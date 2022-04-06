@@ -1,9 +1,11 @@
 BUILD:
 - aarch64-conda_cos7-linux-gnu
+attr:
+- '2.5'
 c_compiler:
 - gcc
 c_compiler_version:
-- '9'
+- '10'
 cdt_arch:
 - aarch64
 cdt_name:
