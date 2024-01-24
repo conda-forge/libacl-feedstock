@@ -1,16 +1,16 @@
 {% set name = "libacl" %}
-{% set version = "2.3.1" %}
+{% set version = "2.3.2" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  - url: http://download.savannah.gnu.org/releases/acl/acl-{{ version }}.tar.gz
-    sha256: 760c61c68901b37fdd5eefeeaf4c0c7a26bdfdd8ac747a1edff1ce0e243c11af
+  - url: http://download.savannah.gnu.org/releases/acl/acl-{{ version }}.tar.xz
+    sha256: 97203a72cae99ab89a067fe2210c1cbf052bc492b479eca7d226d9830883b0bd
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
