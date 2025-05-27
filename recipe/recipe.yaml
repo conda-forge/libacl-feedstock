@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  skip: not linux
+  skip: not unix
 
 requirements:
   build:

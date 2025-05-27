@@ -43,6 +43,12 @@ description = "Build libacl-feedstock with variant linux_ppc64le_ directly (with
 [tasks."inspect-linux_ppc64le_"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_.yaml"
 description = "List contents of libacl-feedstock packages built for variant linux_ppc64le_"
+[tasks."build-osx_64_"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_.yaml"
+description = "Build libacl-feedstock with variant osx_64_ directly (without setup scripts)"
+[tasks."inspect-osx_64_"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_.yaml"
+description = "List contents of libacl-feedstock packages built for variant osx_64_"
 
 [feature.smithy.dependencies]
 conda-smithy = "*"
