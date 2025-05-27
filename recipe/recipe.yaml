@@ -1,0 +1,43 @@
+schema_version: 1
+
+context:
+  name: libacl
+  version: 2.3.2
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: http://download.savannah.gnu.org/releases/acl/acl-${{ version }}.tar.xz
+    sha256: 97203a72cae99ab89a067fe2210c1cbf052bc492b479eca7d226d9830883b0bd
+
+build:
+  number: 0
+  skip: not linux
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - autoconf
+    - make
+  host:
+    - attr
+  run_exports:
+    - ${{ pin_subpackage(name, upper_bound='x.x') }}
+
+tests:
+  - package_contents:
+      files:
+        - include/sys/acl.h
+
+about:
+  license: GPL-2.0-or-later
+  license_file: doc/COPYING
+  summary: Commands for Manipulating POSIX Access Control Lists
+  homepage: https://savannah.nongnu.org/projects/acl/
+
+extra:
+  recipe-maintainers:
+    - Tobias-Fischer
+    - wolfv
