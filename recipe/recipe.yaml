@@ -26,7 +26,7 @@ requirements:
     - autoconf
     - make
   host:
-    - libattr >=2.6
+    - libattr
   run_exports:
     - ${{ pin_subpackage(name, upper_bound='x.x') }}
 
